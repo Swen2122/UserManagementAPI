@@ -54,6 +54,7 @@ namespace UserManagementAPI.Controllers
             }
             userToUpdate.Name = updateUser.Name;
             userToUpdate.Email = updateUser.Email;
+            userToUpdate.LastUpdateAt = DateTime.UtcNow;
             await _users.SaveChangesAsync();
 
             return NoContent();
